@@ -1,0 +1,28 @@
+{% for project in projectslist | reverse %}
+    <div class="blog-preview-item">
+        <hr />
+        <a href="{{project.url | url}}">
+            <div style="display: flex; width: 100%; justify-content: center;">
+                <img src="{{project.data.featuredImage}}"
+                    alt="{{project.data.featuredImageAltText}}"
+                />
+            </div>
+            <h2>{{project.data.title}}</h2>
+            <ul class="tags">
+                {% for tag in project.data.badges %}
+                    <li>{{tag}}</li>
+                {% endfor %}
+            </ul>
+            <p>{{project.data.description}}</p>
+        </a>
+        <ul class="project-links">
+            {% if project.data.showGithub %}
+                <li><a href="{{project.data.github}}">Github</a></li>
+            {% endif %}
+
+            {% if project.data.showLaunch %}
+                <li><a href="{{project.data.launch}}">Launch</a></li>
+            {% endif %} 
+        </ul>
+    </div>
+{% endfor %}

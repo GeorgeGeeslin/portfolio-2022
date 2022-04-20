@@ -1,0 +1,111 @@
+---
+layout: layouts/base.njk
+permalink: /
+---
+{# TODO: Make all content, paragraphs, image, header, editable from CMS #}
+
+<div id="hero">
+    <h1 id="heading">
+        <span id="line1">Hi, I'm</span>
+        <br />
+        <span id="line2"> 
+            George Geeslin
+        </span>
+        <br />
+        <span id="line3">I'm a web developer.</span>
+    </h1>
+    <div id="sky">
+        <div class="stars" id="stars1"></div>
+        <div class="stars" id="stars2"></div>
+        <div class="stars" id="stars3"></div>
+        <div class="stars" id="stars4"></div>
+        <div class="stars" id="stars5"></div>
+        <div class="stars" id="stars6"></div>
+    </div>
+</div>
+{# TODO: Image optimization, multiple sizes... something like sharp/gatsby-image? #}
+{# TODO: Rewrite these paragraphs #}
+<div id="about" class="post-wrapper" style="min-height: 100vh;">
+    <h1 style="padding-top: 1em;" align="center">About Me</h1>
+    <div class="about-image-container">
+        <img class="about-image"
+            title="Me and Megan's nurse friends that time they all came to Austin."
+            alt="Me and Megan's nurse friends that time they all came to Austin." 
+            style="margin-right: 2rem; margin-bottom: 0; min-width: 50px; border-radius: 100%;"
+            src="/images/uploads/me6thstreet-cropped.png"
+         />
+    </div>
+    <p>
+        Hi, my name is George Geeslin, and I'm a Full Stack developer from Austin, TX.
+        I'm currently working at Ericsson, 
+        before that I was a senior Report Developer at Frontline Education.
+
+        {# TODO: How to best describe prior jobs? Frontline, eSS, bootcamp #}
+    </p>
+    <p>
+        I have a passion for web development,
+        which will be the focus of content I post here.
+    </p>
+    <p>
+        I created this site as a place to display some of my personal
+        projects and to blog about what I’m working on and what I’ve
+        learned along the way. Hopefully writing about the challenges I’ve
+        encountered and how I solved them will not only be useful to my
+        own growth as a developer, but also to others who may come across
+        my writings.
+    </p>
+    <p>
+        After initially creating this site, I let it fall dormant for awhile. I guess I just got busy 
+        with life and other projects. I'll be adding a few things here and there and hopefully 
+        will do a better job keeping things current.
+    </p>
+    <p>
+        I'm always interested to talk shop and to work with enthusiastic
+        people. So, if you like what you see here reach out on <a href="https://www.linkedin.com/in/george-geeslin/">LinkedIn</a>
+    </p>
+    <p>
+        Feel free to checkout my{" "}
+        <a href="https://github.com/GeorgeGeeslin">github</a> for the code
+        to this site and my other projects.
+    </p>
+    <script>
+        const nav = document.querySelector("nav");
+        const hero = document.querySelector("#hero");
+
+        const heroOptions = {
+            rootMargin: "-100px 0px 0px 0px"
+        };
+
+        const heroObserver = new IntersectionObserver(function(entries, heroObserver) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    nav.classList.add("solid");
+                } else {
+                    nav.classList.remove("solid");
+                }
+            })
+        }, heroOptions);
+
+        window.onscroll = () => {
+
+            let scrolled = document.body.scrollTop;
+            document.getElementById("heading").style.top = scrolled + "px"
+
+            document.getElementById("heading").style.opacity =
+            1 - (scrolled + 400) / window.innerHeight
+
+            document.getElementById("line1").style.top = -(scrolled * 0.0575) + "px"
+
+            document.getElementById("line3").style.top = scrolled * 0.0575 + "px"
+
+            document.getElementById("line2").style.wordSpacing =
+            0.25 + scrolled * 0.1 + "px"
+
+            if (scrolled === 0) {
+            document.getElementById("heading").style.opacity = 1
+            }
+        };
+
+        heroObserver.observe(hero);
+    </script>
+</div>

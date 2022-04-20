@@ -1,0 +1,33 @@
+{# nav should have class "solid" when it is not on index #}
+<nav class="{{'solid' if '/' !== page.url}}">
+    <div class="logo">
+        <div class="circle">
+            <div class="circle-text">
+            G<div id="second-G">G</div>
+            </div>
+        </div>
+        <div class="name">George Geeslin</div>
+    </div>
+
+    <div class="collapsible-menu">
+        <input type="checkbox" id="menu" />
+        <label for="menu"></label>
+        <ul class="nav-content">
+            <li>
+                <a href="/" class="nav-link">
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="/projects" class="nav-link">
+                    Projects
+                </a>
+            </li>
+            <li>
+                <a href="/posts" class="nav-link">
+                    Blog
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

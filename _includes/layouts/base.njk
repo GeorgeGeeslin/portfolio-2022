@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>George Geeslin</title>
+        <link rel="stylesheet" href="{{ '/css/style.css' | url }}"/>
+        <link rel="stylesheet" href="{{ '/css/hero.css' | url }}"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% include "header.njk" %}
+        {{ content | safe }}
+    </body>
+</html>

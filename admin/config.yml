@@ -1,0 +1,42 @@
+
+   
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "posts"
+    create: true
+    slug: "{{title}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Date", name: "date", widget: "date", default: ""}
+      - {label: "Post Body", name: "body", widget: "markdown"}
+      - {label: "Featured Image", name: "featuredImage", widget: "image"}
+      - {label: "Featured Image Alt Text", name: "featuredImageAltText", widget: "string"}
+      - {label: "Badges", name: badges, widget: "list"}
+
+  - name: "projects"
+    label: "Projects"
+    folder: "projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layouts/project.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Date", name: "date", widget: "date", default: ""}
+      - {label: "Post Body", name: "body", widget: "markdown"}
+      - {label: "Featured Image", name: "featuredImage", widget: "image"}
+      - {label: "Badges", name: badges, widget: "list"}
+      - {label: "Show Github Link", name: "showGithub", widget: "boolean", default: true }
+      - {label: "Github", name: "github", widget: "string", default: "none"}
+      - {label: "Show Launch Link", name: "showLaunch", widget: "boolean", default: true }      
+      - {label: "Launch", name: "launch", widget: "string", default: "none"}

@@ -1,0 +1,28 @@
+---
+layout: layouts/page.njk
+---
+<div class="post-wrapper">
+    <div class="post-container">
+        <h1>
+            {% if showLaunch %}
+                <a class="title-link" href="{{launch}}">{{title}}</a>
+            {% else %}
+                {{title}}
+            {% endif %}
+        </h1>
+        <hr style="width: 100%;"/>
+        <div>{{ content | safe}}</div>
+        <ul class="project-links">
+            {% if showGithub %}
+                <li><a href="{{github}}">Github</a></li>
+            {% endif %}
+
+            {% if showLaunch %}
+                <li><a href="{{launch}}">Launch</a></li>
+            {% endif %} 
+        </ul>
+    </div>
+</div>
+
+
+

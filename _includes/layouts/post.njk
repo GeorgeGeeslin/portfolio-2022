@@ -1,0 +1,13 @@
+---
+layout: layouts/page.njk
+---
+
+<div class="post-wrapper">
+    <div class="post-container">
+        <h1>{{title}}</h1>
+        <p class="date">{{date | postDate}}</p>
+        <img src="{{featuredImage | url}}" alt="{{featuredImage}}"></img>
+
+        <p>{{ content | safe}}</p>
+    </div>
+</div>

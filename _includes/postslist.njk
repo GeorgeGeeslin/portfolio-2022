@@ -1,0 +1,18 @@
+{% for post in postslist | reverse %}
+    <div class="blog-preview-item">
+        <hr />
+        <a href="{{post.url | url}}">
+            <img src="{{post.data.featuredImage}}"
+                alt="{{post.data.featuredImageAltText}}"
+            />
+            <h2>{{post.data.title}}</h2>
+            <small>{{post.data.date | postDate}}</small>
+            <p>{{post.data.description + "..."}}</p>
+        </a>
+        <ul class="tags">
+            {% for tag in post.data.badges %}
+                <li>{{tag}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endfor %}
