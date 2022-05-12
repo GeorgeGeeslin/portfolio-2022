@@ -13,8 +13,8 @@ badges:
   - Lambda
   - DynamoDB
   - Puppeteer
-showGithub: false
-github: none
+showGithub: true
+github: https://github.com/GeorgeGeeslin/resume-builder
 showLaunch: true
 launch: https://lonestarresumes.com
 ---
