@@ -20,7 +20,7 @@ launch: https://lonestarresumes.com
 ---
 This resume builder lets you input data to create a resume. A live preview is generated as you type, so you can see how it will look when you download it. 
 
-Currently, it's completely free. You don't even have to create an account down build and download your resume. But you will have to create an account if you want to save your resumes so you can come back and edit them later. 
+It's completely free, and you don't even have to create an account if you don't want to. Without an account you can still create and download resumes, but you will have to create an account if you want to save your resumes so you can come back and edit them later. If you're paranoid about me having your data then just download the resume without saving it. It gets sent straight to you and never even hits my database unless you  save it. Though, if you do have some saved resumes, it will remember which one you were working on last when you log back in, which is nice I guess.
 
 Like most of my projects, the goal was to explore some new (to me) technologies. I wanted to build a react frontend that strictly used hooks. And specifically I wanted to use the useContext and useReducer hooks together to sort of mimic Redux. 
 
