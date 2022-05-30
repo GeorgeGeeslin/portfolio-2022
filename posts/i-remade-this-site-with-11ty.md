@@ -24,7 +24,7 @@ Layout templates can inherit from other layout templates, so what you get is an 
 
 Eleventy certainly feels like it's trying to be pretty simple to use, where markup is markup (generated via templates) and javascript isn't the center of the universe. I think this is a good approach for simpler sites. This portfolio site is simple enough that it could easily just be written in HTML and CSS. The reason not to go that way is that authoring new posts in HTML is tedious and I'd rather have the convenience of using a CMS, or at least writing posts in markdown.
 
-\## Resources I used to quickly get started.
+## Resources I used to quickly get started.
 
 At least do the two tutorials under “Making a simple web site with the simplest static site generator” 
 <https://www.11ty.dev/docs/tutorials/>
